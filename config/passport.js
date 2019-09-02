@@ -8,7 +8,7 @@ const passAuthentication =(passport)=>{
     passport.use(new GoogleStrategy({
         clientID: keys.client_id,
         clientSecret: keys.client_secret,
-        callbackURL: "/auth/google/callback",
+        callbackURL: "/auth/google/callback" || 'https://hidden-brushlands-71654.herokuapp.com/auth/google/callback' ,
         proxy: true
       },
     (accessToken, refreshToken, profile, cb) =>{
